@@ -1,0 +1,30 @@
+<form id="form" action="/cut/cutSubmit.htm" method="post" >
+	<table border="1">
+		<tr>
+			<td><b>Text</b></td>
+		</tr>
+		<tr>
+			<td><textarea rows="5" cols="100" name="text">$!{model.text}</textarea></td>
+		</tr>
+	
+		<tr>
+			<td><input type="hidden" name="greedy" value="false"></input></td>
+		</tr>
+	</table>
+	<input type="submit" value="Cut"></input>
+</form>
+
+<p>
+	Time Usage: $!{model.time} ms
+</p>
+
+<p>
+#foreach( $results in ${model.allResults} )
+    #foreach( $result in ${results})
+    	<span style="color:#CC3300">${result.word}[${result.annotation}]</span> &nbsp;&nbsp;&nbsp;&nbsp;
+	#end
+	<br/>
+#end
+
+</p>
+	

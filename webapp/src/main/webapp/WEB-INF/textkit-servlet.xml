@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>  
+	<bean id="urlMapping" class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping" />
+
+	<bean id="cutController" class="org.fabrelab.textkit.web.CutController" autowire="byName">
+		
+	</bean>
+
+	<bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+        <property name="resourceLoaderPath" value="/WEB-INF/template/" />
+    </bean>
+
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.velocity.VelocityLayoutView" />
+        <property name="layoutUrl" value="layout/default.vm" />
+        <property name="cache" value="true" />
+        <property name="prefix" value="" />
+        <property name="suffix" value=".vm" />
+        <property name="contentType" value="text/html; charset=UTF-8" />
+    </bean>
+
+</beans>

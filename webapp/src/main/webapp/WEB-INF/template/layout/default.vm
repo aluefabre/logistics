@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<html>
+ 	#parse ("parts/head.vm")
+
+    <body>
+        <div>
+            $screen_content
+        </div>
+        <div>
+            #parse ("parts/foot.vm")
+        </div>
+    </body>
+</html>

@@ -1,0 +1,90 @@
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.fabrelab.logistics.trace</groupId>
+	<artifactId>zhidao</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>Spring MVC Example Application</name>
+	<dependencies>
+
+		<!-- Spring framework -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>3.0.0.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>3.0.0.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>3.0.0.RELEASE</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>3.0.0.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			 <version>3.0.0.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.fabrelab.spiderkit</groupId>
+			<artifactId>batchcrawler</artifactId>
+			 <version>1.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.fabrelab.logistics.trace</groupId>
+			<artifactId>textparse</artifactId>
+			 <version>1.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.fabrelab.algorithm</groupId>
+			<artifactId>sequence</artifactId>
+			 <version>1.0</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.google.code.gson</groupId>
+		    <artifactId>gson</artifactId>
+		    <version>1.6</version>
+		</dependency>
+
+	</dependencies>
+
+
+	<repositories>
+
+		<!-- This repository is only needed when the tapestry-release-version is 
+			a snapshot release. -->
+		<repository>
+			<id>apache-snapshots</id>
+			<url>http://repository.apache.org/snapshots/</url>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+
+		<!-- As above, this can be commented out when access to the snapshot version 
+			of a Tapestry Maven plugin is not required. -->
+		<pluginRepository>
+			<id>apache-snapshots</id>
+			<url>http://repository.apache.org/snapshots/</url>
+		</pluginRepository>
+
+	</pluginRepositories>
+</project>
