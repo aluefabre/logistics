@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>  
+
+	<bean id="weiboService" class="org.fabrelab.chayiba.adapter.WeiboService" init-method="init" autowire="byName">
+	</bean>
+
+	<bean id="accessTokenStore" class="org.fabrelab.chayiba.store.AccessTokenStore" autowire="byName">
+	</bean>
+	
+	<bean id="answerPusher" class="org.fabrelab.chayiba.service.AnswerPusher" autowire="byName">
+	</bean>
+	
+	<bean id="questionPuller" class="org.fabrelab.chayiba.service.QuestionPuller" autowire="byName">
+	</bean>
+	
+	<bean id="questionProcessor" class="org.fabrelab.chayiba.service.QuestionProcessor" autowire="byName">
+	</bean>
+	
+	<bean id="chayibaService" class="org.fabrelab.chayiba.service.ChayibaService" autowire="byName">
+	</bean>
+		
+	<bean id="gatewayController" class="org.fabrelab.chayiba.web.GatewayController" autowire="byName">
+    </bean>
+    
+    <bean id="questionQueue" class="java.util.concurrent.LinkedBlockingQueue" autowire="byName">
+    </bean>
+    
+    <bean id="answerQueue" class="java.util.concurrent.LinkedBlockingQueue" autowire="byName">
+    </bean>
+    
+    <bean id="answerHistoryStore" class="org.fabrelab.chayiba.store.AnswerHistoryStore" autowire="byName">
+    </bean>
+    
+    
+	<!-- you can have more than one handler defined -->
+	<bean id="urlMapping" 
+          class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="urlMap">
+			<map>
+				<entry key="/gateway.htm">
+					<ref bean="gatewayController" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass"><value>org.springframework.web.servlet.view.JstlView</value></property>
+        <property name="prefix"><value>/WEB-INF/jsp/</value></property>
+        <property name="suffix"><value>.jsp</value></property>
+    </bean>
+    
+</beans>
